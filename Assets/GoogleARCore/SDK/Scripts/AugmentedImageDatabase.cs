@@ -30,6 +30,7 @@ namespace GoogleARCore
 #if UNITY_EDITOR
     using System.IO;
     using UnityEditor;
+    using System.Globalization;
 #endif
 
     /// <summary>
@@ -256,7 +257,7 @@ namespace GoogleARCore
                 sb.Append(m_Images[i].Name).Append('|').Append(imagePath);
                 if (m_Images[i].Width > 0)
                 {
-                    sb.Append('|').Append(m_Images[i].Width);
+                    sb.Append('|').Append(m_Images[i].Width.ToString(CultureInfo.InvariantCulture));
                 }
 
                 fileLines[i] = sb.ToString();
